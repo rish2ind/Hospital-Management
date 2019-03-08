@@ -1,0 +1,74 @@
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#first{
+    background-color: #50a3e4;
+    padding: 17px;
+    font-size: 27px;
+    font-family: "Arial";
+}
+#title{
+    background-color: #f10432;
+    padding: 20px;
+    text-align: center;
+    font-size: 23px;
+    color: white;
+}
+#nav{
+    text-align: center;
+    padding: 12px;
+    font-size: 20px;
+    font-family: cursive;
+}
+ul li{
+    display: inline;
+    text-align: center;
+}
+.heads{
+    background-color: greenyellow;
+    font-size: 16px;
+    text-align: left;
+    padding: 13px;
+    font-size: 23px;
+}
+a{
+    text-decoration: none;
+}
+table{
+    border-collapse: collapse;
+    font-family: arial, sans-serif;
+    margin: 12px;
+}
+td, th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even){
+    background-color: #dddddd;
+}
+.new{
+    font-size: 25px;
+}
+#doc{
+    border: 1px solid ;
+    float: left;
+    padding: 15px;
+    position: relative;
+    left: 40%;
+    top: 15px;
+    border-radius: 8px;
+    background-color: azure;
+}
+#doc input{
+    float: right;
+    padding: 4px;
+}
+#doc lable{
+    font-size: 20px;
+}
+#back{
+    background-color: antiquewhite;
+}
