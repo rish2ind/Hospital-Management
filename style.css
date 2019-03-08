@@ -1,0 +1,15 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#form{
+    border: 1px solid;
+    width: 25%;
+    padding: 30px;
+    margin: 0px auto;
+    position: relative;
+    top: 100px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 2, 0.2);
+}
+
