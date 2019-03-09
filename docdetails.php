@@ -5,12 +5,12 @@ $conn = mysqli_connect("localhost", "root", "", "hospital");
     <body>
        <?php
         if(isset($_POST['submit'])){
-            $id = $_POST['docid'];
             $name = $_POST['docname'];
             $special = $_POST['special'];
             $age = $_POST['docage'];
-            
-            $sql = "insert into docdetails (Id, Name, Specialization, Age) values('$id', '$name', '$special', '$age'  )";
+            $email = $_POST['docemail'];
+            $mobile = $_POST['docmobile'];
+            $sql = "insert into docdetails ( Name, Specialization, Age, Email, Mobile) values( '$name', '$special', '$age', '$email', '$mobile'  )";
             $run = mysqli_query($conn, $sql);
             
             if($run){
