@@ -21,6 +21,9 @@ body{
     font-size: 20px;
     font-family: cursive;
 }
+#nav a:hover{
+    color: red;
+}
 .heads{
     background-color: greenyellow;
     font-size: 16px;
@@ -46,6 +49,12 @@ tr:nth-child(even){
 }
 .new{
     font-size: 25px;
+    position: relative;
+    left: 20px;
+}
+.new:hover{
+    color: red;
+    text-decoration: underline;
 }
 #doc{
     border: 1px solid ;
