@@ -7,6 +7,10 @@
        <div id="form">
         <form action="login.php" method="POST">
            <h2>Login Page</h2>
+           <p>
+               <lable>Username</lable>
+               <input type="text" name="user" placeholder="Username.." required="">
+           </p>
             <p>
                 <lable>Email</lable>
                 <input type="email" placeholder="Your Id.." name="email" required="">
