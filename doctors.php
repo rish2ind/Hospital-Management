@@ -1,20 +1,7 @@
-<?php 
-    $conn = mysqli_connect("localhost", "root", "", "hospital");   
+   <?php
+    $conn = mysqli_connect("localhost", "root", "", "hospital");
 
-if(isset($_POST['submit'])){
-    $email = $_POST['email'];
-    
-    $sql = "delete from docdetails where Email = '$email'";
-    $run = mysqli_query($conn, $sql);
-    if($run){
-        header('location: doctors.php');
-    }
-    else{
-        echo "Error".mysqli_error($conn);
-    }
-}
-  ?>  
-   
+?>
    <html>
     <head>
         <title>Dashboard</title>
@@ -47,7 +34,7 @@ if(isset($_POST['submit'])){
                 <th>Email</th>
                 <th>Mobile No.</th>
                 <th>Modify</th>
-                
+                <th>Delete</th>
             </tr>
              <?php
     $sqlget = "select * from docdetails";
@@ -62,23 +49,12 @@ if(isset($_POST['submit'])){
                <td><?php echo $row['Email'];?></td>
                <td><?php echo $row['Mobile'];?></td>
                <td><a href="modify.php?id=<?php echo $row['Email']; ?>">Modify</a></td>
-               
+               <td><a href="deletedoctors.php?id=<?php echo $row['Email']; ?>">Delete</a></td>
            </tr> 
            
            <?php
             }
 ?>
         </table>    
-        <div class="heads">
-            Delete Records
-        </div>
-        <form action="" method="POST">
-            <P>Enter Email of doctor to delete
-                <input type="email" placeholder="Enter Email..." name="email">
-            </P>
-            <p>
-                <input type="submit" value="Delete" name="submit">
-            </p>
-        </form>
     </body>
 </html>
