@@ -22,12 +22,7 @@ $conn = mysqli_connect("localhost", "root", "", "hospital");
                 <br><a href="new_doctor.php">Click here to go back</a>
                 <?php
             }
-        }
-        
-        
-        
-        
-        
+        }     
         ?>
     </body>
 </html>
