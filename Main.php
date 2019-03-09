@@ -58,13 +58,37 @@
         <div class="heads">
             Delete Record
         </div>
-        <table width="600" border="1">
+         <table width="100%" border="1" cellpadding="1" cellspacing= "1" id="doctable">
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Gender</th>
+                <th>Pateints Name</th>
                 <th>Age</th>
+                <th>Sex</th>
+                <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Date</th>
+                <th>Modify</th>        
             </tr>
-        </table>
+            <?php
+    $sqlget = "select * from pateints";
+    $result = mysqli_query($conn, $sqlget);
+            while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+       ?>
+           <tr>
+               <td><?php echo $row['Id'];?></td>
+               <td><?php echo $row['Name'];?></td>
+               <td><?php echo $row['Age'];?></td>
+               <td><?php echo $row['Sex'];?></td>
+               <td><?php echo $row['Email'];?></td>
+               <td><?php echo $row['Mobile'];?></td>
+                <td><?php echo $row['Date'];?></td>
+               <td><a href="deletepateints.php?id=<?php echo $row['Email']; ?>">Delete</a></td>
+               
+           </tr> 
+           
+           <?php
+            }
+?>     
+        </table>  
     </body>
 </html>
