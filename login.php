@@ -10,8 +10,9 @@
             if(isset($_POST['submit'])){
                 $email = $_POST['email'];
                 $pass = $_POST['password'];
+                $user = $_POST['user'];
                 
-                $sql = "select * from login_details where Email = '".$email."' AND Password = '".$pass."'";
+                $sql = "select * from login_details where Username = '".$user."' AND Email = '".$email."' AND Password = '".$pass."'";
                 $run = mysqli_query($conn, $sql);
                 if(mysqli_num_rows($run)==1){
                     header('Location: Main.php');
