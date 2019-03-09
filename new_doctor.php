@@ -13,8 +13,8 @@
         </div>
         <div id="nav">
            <a href="Main.php">Home</a> &nbsp; &nbsp; &nbsp;
-            <a href="#">Doctors</a> &nbsp; &nbsp; &nbsp; &nbsp;
-            <a href="#">Patients</a> &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="doctors.php">Doctors</a> &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="Patients.php">Patients</a> &nbsp; &nbsp; &nbsp; &nbsp;
         </div>
         <div class="heads">
             Add New
@@ -22,10 +22,6 @@
        <div id="doc">
        <h2>Add new Doctors</h2>
       <form action="docdetails.php" method="POST">
-         <p>
-              <lable>Id</lable>
-              <input type="number" name="docid" required="">
-          </p>
           <p>
               <lable>Name</lable>
               <input type="text" name="docname" required="">                         
@@ -39,8 +35,17 @@
               <input type="number" name="docage" required="">
           </p>
           <p>
+              <lable>Email</lable>
+              <input type="email" name="docemail" required="">
+          </p>
+          <p>
+              <lable>Mobile</lable>
+              <input type="text" name="docmobile" required="">
+          </p>
+          <p>
               <input type="submit" value="Submit" name="submit">
           </p>
+          
       </form>
      </div>
     
