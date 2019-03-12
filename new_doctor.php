@@ -1,12 +1,27 @@
-<html>
+<?php
+    session_start();
+$conn = mysqli_connect("localhost", "root", "", "hospital");
+$userprofile = $_SESSION["user"];
+$sql = "select * from login_details where Username = '".$userprofile."'";
+    $run = mysqli_query($conn, $sql);
+$result = mysqli_fetch_assoc($run);
+if($userprofile==true){
+    
+}
+else{
+    header('location: index.php');
+}
+?>
+   <html>
     <head>
         <title>Dashboard</title>
         <link rel="stylesheet" href="PHPStyle.css">
+        <link rel="icon" href="Images/Hospital1.jpg">
     </head>
     <body>
         
         <div id="first">
-            Welcome
+            Welcome : <?php echo $result['Name']; ?> <a href="logout.php"><span style="float: right;">Logout</span></a>
         </div>
         <div id="title">
             HOSPITAL MANAGEMENT SYSTEM
