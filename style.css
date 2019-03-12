@@ -1,6 +1,8 @@
 body{
     margin: 0px;
     padding: 0px;
+    background-image: url(Images/AIIMS.jpg);
+    background-size: cover;
 }
 #form{
     border: 1px solid;
@@ -12,4 +14,8 @@ body{
     border-radius: 6px;
     background-color: rgba(0, 0, 2, 0.2);
 }
-
+#form input{
+    background: transparent;
+    padding: 10px;
+    border-bottom: 1px solid;
+}
