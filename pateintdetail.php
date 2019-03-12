@@ -1,6 +1,6 @@
 <?php
         $conn = mysqli_connect("localhost", "root", "", "hospital");
-
+    
         if(isset($_POST['submit'])){
             $name = $_POST['patname'];
             $age = $_POST['patage'];
