@@ -13,9 +13,14 @@ body{
     top: 100px;
     border-radius: 6px;
     background-color: rgba(0, 0, 2, 0.2);
+    font-size: 18px;
 }
 #form input{
-    background: transparent;
-    padding: 10px;
+    padding: 5px;
     border-bottom: 1px solid;
+    font-size: 15px;
+    float: right;
+}
+#submit{
+    margin-top: 7px;
 }
