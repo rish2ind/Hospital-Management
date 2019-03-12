@@ -1,27 +1,39 @@
 <?php
     $conn = mysqli_connect("localhost", "root", "", "hospital");
-    
+    session_start();
+ $id = $_GET['id'];
+$d = mysqli_query($conn, "select * from docdetails where Id = '$id'");
+$check = mysqli_fetch_array($d);
+
 if(isset($_POST['Submit'])){
-    $name = $_POST['name'];
-    $email = $_POST['Email'];
-    $mobile = $_POST['mobile'];
-    $sql = "update docdetails set Name = '$name' where Email = '$email'";
-    $sqlmob = "update docdetails set Mobile = '$mobile' where Email = '$email'";
-    $runmob = mysqli_query($conn, $sqlmob);
-        $run = mysqli_query($conn, $sql);
-    if($run){
+            $name = $_POST['docname'];
+            $special = $_POST['special'];
+            $age = $_POST['docage'];
+            $email = $_POST['docemail'];
+            $mobile = $_POST['docmobile'];
+    
+        $sqls = "update docdetails set Name = '$name', Specialization = '$special', Age = '$age', Email = '$email', Mobile = '$mobile' where Id = '$id'";
+    $runs = mysqli_query($conn, $sqls);
+    if($runs){
         header('location: doctors.php');
+        ?>
+        <a href="doctors.php">Click here</a>
+        <?php
     }
     else{
         echo "Error".mysqli_error($conn);
     }
-    if($runmob){
-        echo "Data updated successfully";
-    }
-    else{
-        echo "Error".mysql_error($conn);
-    }
 }
+$userprofile = $_SESSION["user"];
+if($userprofile==true){
+    
+}
+else{
+    header('location: index.php');
+}
+$sql = "select * from login_details where Username = '".$userprofile."'";
+    $run = mysqli_query($conn, $sql);
+$result = mysqli_fetch_assoc($run);
 ?>
    
 
@@ -30,11 +42,13 @@ if(isset($_POST['Submit'])){
     <head>
         <title>Dashboard</title>
         <link rel="stylesheet" href="PHPStyle.css">
+                <link rel="icon" href="Images/Hospital1.jpg">
+
     </head>
     <body>
         
         <div id="first">
-            Welcome
+            Welcome : <?php echo $result['Name']; ?> <a href="logout.php"><span style="float: right;">Logout</span></a>
         </div>
         <div id="title">
             HOSPITAL MANAGEMENT SYSTEM
@@ -46,27 +60,34 @@ if(isset($_POST['Submit'])){
         </div>
         <div class="heads">
             Update Records
-        </div><div id="doc">
-        <form action="<?php $_PHP_SELF ?>" method="POST">
-           <p>Enter the email id of doctor :</p>
-            <p>
-                <lable>Email</lable>
-                <input type="email" name="Email" required="">
-            </p><hr>
-            <p>Enter the name to be changed</p>
-            <p>
-                <lable>Name</lable>
-                <input type="text" name="name" placeholder="Enter name">
-            </p>
-            <p>Enter the Mobile Number to be changed</p>
-            <p>
-                <lable>Mobile No.</lable>
-                <input type="text" name="mobile" placeholder="Enter mobile number">
-            </p>
-            <p>
-                <input type="submit" name="Submit" value="Submit">
-            </p>
-        </form>
-               </div>
+        </div> <div id="doc">
+       <h2>Add new Doctors</h2>
+      <form action="" method="POST">
+          <p>
+              <lable>Name</lable>
+              <input type="text" name="docname" value="<?php echo $check['Name']; ?>" required="">                         
+          </p>
+          <p>
+              <lable>Specialization</lable>
+              <input type="text" name="special" value="<?php echo $check['Specialization']; ?>" required="">
+          </p>
+          <p>
+              <lable>Age</lable>
+              <input type="number" value="<?php echo $check['Age']; ?>" name="docage" required="">
+          </p>
+          <p>
+              <lable>Email</lable>
+              <input type="email" value="<?php echo $check['Email']; ?>" name="docemail" required="">
+          </p>
+          <p>
+              <lable>Mobile</lable>
+              <input type="text" value="<?php echo $check['Mobile']; ?>" name="docmobile" required="">
+          </p>
+          <p>
+              <input type="submit" value="Submit" name="Submit">
+          </p>
+          
+      </form>
+     </div>
        </body>
 </html>
