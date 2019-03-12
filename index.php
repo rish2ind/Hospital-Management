@@ -18,7 +18,7 @@
             <p>
                 <lable>Password</lable>
                 <input type="password" placeholder="Password" required="" name="password"><br>
-                <input type="submit" value="Submit" name="submit">
+                <input type="submit" value="Submit" name="submit" id="submit">
             </p>
         </form>
         </div>
