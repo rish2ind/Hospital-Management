@@ -24,7 +24,7 @@ else{
     <body>
         
         <div id="first">
-            Welcome : <?php echo $result['Name']; ?><a href="logout.php"><span style="float: right;">Logout</span></a>
+            Welcome : <a href="Admin.php"><?php echo $result['Name']; ?></a><a href="logout.php"><span style="float: right;">Logout</span></a>
         </div>
         <div id="title">
             HOSPITAL MANAGEMENT SYSTEM
