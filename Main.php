@@ -1,16 +1,30 @@
-    <?php
+<?php
+    
  $conn = mysqli_connect("localhost", "root", "", "hospital");
-
+session_start();
+$userprofile = $_SESSION["user"];
+$sql = "select * from login_details where Username = '".$userprofile."'";
+    $run = mysqli_query($conn, $sql);
+$result = mysqli_fetch_assoc($run);
+if($userprofile==true){
+    
+}
+else{
+    header('location: index.php');
+}
 ?>
+
          <html>
     <head>
         <title>Dashboard</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="PHPStyle.css">
+        <link rel="icon" href="Images/Hospital.png">
     </head>
     <body>
         
         <div id="first">
-            Welcome 
+            Welcome : <?php echo $result['Name']; ?><a href="logout.php"><span style="float: right;">Logout</span></a>
         </div>
         <div id="title">
             HOSPITAL MANAGEMENT SYSTEM
@@ -47,7 +61,7 @@
                <td><?php echo $row['Email'];?></td>
                <td><?php echo $row['Mobile'];?></td>
                 <td><?php echo $row['Date'];?></td>
-               <td><a href="modify.php?id=<?php echo $row['Email']; ?>">Modify</a></td>
+               <td><a href="modifyMain.php?id=<?php echo $row['Id']; ?>">Modify</a></td>
                
            </tr> 
            
